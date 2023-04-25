@@ -10,6 +10,7 @@ app.use(express.urlencoded({ extended: false }));
 
 app.use("/", require("./routes/rootRoutes"));
 app.use("/add", require("./routes/addRoutes"));
+app.use("/intel", require("./routes/intelRoutes"));
 
 dbConnect();
 
