@@ -12,6 +12,9 @@ nav {
     background-image: linear-gradient(#e0e0e0,#e0e0e0);
   }
 
+label {
+    margin-bottom: 3px;
+}
 
 .urlap-container {
     display: flex;
@@ -29,9 +32,32 @@ nav {
 }
 
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 800px) {
      .urlap-container {
-        border-radius: 10px;
-        min-width: 80%;
+        min-width: 60%;
      }
+}
+
+@media only screen and (max-width: 600px) {
+    .urlap-container {
+       min-width: 80%;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .urlap-container {
+       min-width: 90%;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .urlap-container {
+       min-width: 93%;
+    }
+}
+
+@media only screen and (max-width: 400) {
+    .urlap-container {
+       min-width: 99%;
+    }
 }
