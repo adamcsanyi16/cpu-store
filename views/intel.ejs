@@ -1,13 +1,20 @@
 <!DOCTYPE html>
 <html lang="hu">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Intel</title>
-</head>
-<body>
-    <% cpus.forEach(element => { %>
-        <p>Név: <%= element.name %></p>
-    <% }) %>
-</body>
+  </head>
+  <body>
+    <% cpus.forEach(element => { %> <% if (element.type == "Intel" ||
+    element.type == "intel") { %>
+    <p>Type: <%= element.type %></p>
+    <p>Name: <%= element.name %></p>
+    <p>Cores: <%= element.cores %></p>
+    <p>Threads: <%= element.threads %></p>
+    <p>Price: <%= element.price %></p>
+    <img src="<%= element.image %>" alt="" />
+
+    <% } %> <% }) %>
+  </body>
 </html>

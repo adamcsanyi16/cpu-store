@@ -9,6 +9,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 app.use("/", require("./routes/rootRoutes"));
+app.use("/add", require("./routes/addRoutes"));
 
 dbConnect();
 

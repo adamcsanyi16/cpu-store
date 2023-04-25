@@ -1,27 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Add CPU</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="urlap-container">
-        <form enctype="multipart/form-data" id="urlap">
-            <label for="tpye">Type: </label>
-            <input type="text" id="type" name="type" /><br />
-            <label for="name">Name: </label>
-            <input type="text" id="name" name="name" /><br />
-            <label for="cores">Cores: </label>
-            <input type="number" id="price" name="price" /><br />
-            <label for="threads">Threads: </label>
-            <input type="number" id="threads" name="threads" /><br />
-            <label for="price">Price: </label>
-            <input type="number" id="price" name="price" /><br />
-            <label for="image">Kép: </label>
-            <input type="file" id="image" name="image" /><br />
-            <button onclick="feltolt(event)">Elküld</button>
-        </form>
+      <form enctype="multipart/form-data" id="urlap">
+        <label for="tpye">Type: </label>
+        <input type="text" id="type" name="type" /><br />
+        <label for="name">Name: </label>
+        <input type="text" id="name" name="name" /><br />
+        <label for="cores">Cores: </label>
+        <input type="number" id="cores" name="cores" /><br />
+        <label for="threads">Threads: </label>
+        <input type="number" id="threads" name="threads" /><br />
+        <label for="price">Price: </label>
+        <input type="number" id="price" name="price" /><br />
+        <label for="image">Image: </label>
+        <input type="file" id="image" name="image" /><br />
+        <button onclick="feltolt(event)">Send</button>
+      </form>
     </div>
-</body>
+    <script>
+      function feltolt(event) {
+        event.preventDefault();
+
+        const formData = new FormData();
+        formData.append("type", document.getElementById("type").value);
+        formData.append("name", document.getElementById("name").value);
+        formData.append("cores", document.getElementById("cores").value);
+        formData.append("threads", document.getElementById("threads").value);
+        formData.append("price", document.getElementById("price").value);
+        formData.append("image", document.getElementById("image").files[0]);
+
+        const elkuld = async () => {
+          try {
+            const response = await fetch("/add", {
+              method: "POST",
+              body: formData,
+            });
+
+            const res = await response.json();
+
+            if (response.ok) {
+              console.log(res.msg);
+              window.location.href = "http://localhost:3500";
+            } else {
+              console.log(res.msg);
+            }
+          } catch (error) {
+            console.log(error.message);
+          }
+        };
+
+        elkuld();
+      }
+    </script>
+  </body>
 </html>
