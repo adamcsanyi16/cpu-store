@@ -34,6 +34,10 @@ img:hover {
   transform: scale(1.1);
 }
 
+nav {
+  background-image: linear-gradient(#e0e0e0,#e0e0e0);
+}
+
 .container.fluid {
   background-color: #e0e0e0;
 } 
