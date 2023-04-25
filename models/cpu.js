@@ -2,11 +2,11 @@ const mongoose = require("mongoose");
 
 const cpuSchema = new mongoose.Schema(
   {
-    name: {
+    type: {
       type: String,
       required: true,
     },
-    type: {
+    name: {
       type: String,
       required: true,
     },
