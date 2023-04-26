@@ -6,8 +6,7 @@
     <title>Intel</title>
   </head>
   <body>
-    <% cpus.forEach(element => { %> <% if (element.type == "Intel" ||
-    element.type == "intel") { %>
+    <% cpus.forEach(element => { %> <% if (element.type == "Intel" ) { %>
     <p>Type: <%= element.type %></p>
     <p>Name: <%= element.name %></p>
     <p>Cores: <%= element.cores %></p>
