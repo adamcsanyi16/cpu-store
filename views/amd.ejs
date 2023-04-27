@@ -40,7 +40,7 @@
       <% cpus.forEach(element => { %> <% if ( element.type == "AMD") { %>
       <div id="data-container">
         <img src="<%= element.image %>" alt="" />
-        <p><%= element.type %> <%= element.name %></p>
+        <div id="cpu_box_amd"><p id="cpu_names"><%= element.type %> <%= element.name %></p></div>
       </div>
 
       <% } %> <% }) %>
