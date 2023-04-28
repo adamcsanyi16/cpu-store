@@ -12,6 +12,7 @@ app.use("/", require("./routes/rootRoutes"));
 app.use("/add", require("./routes/addRoutes"));
 app.use("/intel", require("./routes/intelRoutes"));
 app.use("/amd", require("./routes/amdRoutes"));
+app.use("/onecpu", require("./routes/onecpuRoutes"));
 
 dbConnect();
 

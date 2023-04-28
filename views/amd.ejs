@@ -39,8 +39,12 @@
     <div class="container">
       <% cpus.forEach(element => { %> <% if ( element.type == "AMD") { %>
       <div id="data-container">
-        <img src="<%= element.image %>" alt="" />
-        <div id="cpu_box_amd"><p id="cpu_names"><%= element.type %> <%= element.name %></p></div>
+        <a href="/onecpu/<%= element._id %>"
+          ><img src="<%= element.image %>" alt=""
+        /></a>
+        <div id="cpu_box_amd">
+          <p id="cpu_names"><%= element.type %> <%= element.name %></p>
+        </div>
       </div>
 
       <% } %> <% }) %>
