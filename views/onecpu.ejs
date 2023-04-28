@@ -9,6 +9,7 @@
       integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="/css/info_style.css" />
     <title><%= cpus.type %> <%= cpus.name %></title>
   </head>
   <body>
@@ -41,10 +42,9 @@
       </div>
       <div class="info_container">
         <h1><%= cpus.type %> <%= cpus.name %></h1>
-        <h3><%= cpus.cores %></h3>
-        <h3><%= cpus.threads %></h3>
-        <p><%= cpus.price %> Ft</p>
-      </div>
+        <h3>Cores: <%= cpus.cores %></h3>
+        <h3>Threads: <%= cpus.threads %></h3>
+        <h3><%= cpus.price %> Ft</h3>
     </div>
   </body>
 </html>
