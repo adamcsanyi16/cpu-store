@@ -21,21 +21,25 @@ label {
   margin-bottom: 3px;
 }
 
-#cpu-container {
+.container {
+  margin: auto;
   margin-top: 50px;
   display: grid;
+  transition: all .2s ease-in-out;
   grid-template-columns: 25% 25% 25% 25%;
+  row-gap: 20px;
 }
 
 #data-container {
+  align-items: center;
   background-color: white;
   border-radius: 20px;
   width: 220px;
   display: flex;
   margin: auto;
   margin-bottom: 40px;
+  box-shadow:  10px 10px 30px #b3b3b3;
   flex-direction: column;
-  align-items: center;
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
   -ms-border-radius: 20px;
@@ -76,21 +80,21 @@ label {
 }
 
 @media only screen and (max-width: 1000px) {
-  #cpu-container {
+  .container {
     display: grid;
     grid-template-columns: 33% 33% 33%;
   }
 }
 
-@media only screen and (max-width: 745px) {
-  #cpu-container {
+@media only screen and (max-width: 770px) {
+  .container {
     display: grid;
     grid-template-columns: 50% 50%;
   }
 }
 
 @media only screen and (max-width: 500px) {
-  #cpu-container {
+  .container {
     display: grid;
     grid-template-columns: 100%;
   }
